@@ -3,9 +3,58 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/formationFragment">
+    app:startDestination="@id/loginFragment">
     <fragment
         android:id="@+id/formationFragment"
         android:name="com.example.project_soccer_app.ui.FormationFragment"
         android:label="FormationFragment" />
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.project_soccer_app.ui.HomeFragment"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_minigameFragment"
+            app:destination="@id/minigameFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_myInfoFragment"
+            app:destination="@id/myInfoFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_lobbyFragment"
+            app:destination="@id/lobbyFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/minigameFragment"
+        android:name="com.example.project_soccer_app.ui.MinigameFragment"
+        android:label="MinigameFragment" />
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.project_soccer_app.ui.LoginFragment"
+        android:label="LoginFragment" >
+        <action
+            android:id="@+id/action_loginFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_signFragment"
+            app:destination="@id/signFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signFragment"
+        android:name="com.example.project_soccer_app.ui.SignFragment"
+        android:label="SignFragment" />
+    <fragment
+        android:id="@+id/myInfoFragment"
+        android:name="com.example.project_soccer_app.ui.MyInfoFragment"
+        android:label="MyInfoFragment" />
+    <fragment
+        android:id="@+id/lobbyFragment"
+        android:name="com.example.project_soccer_app.ui.LobbyFragment"
+        android:label="LobbyFragment" >
+        <action
+            android:id="@+id/action_lobbyFragment_to_makeRoomFragment"
+            app:destination="@id/makeRoomFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/makeRoomFragment"
+        android:name="com.example.project_soccer_app.ui.MakeRoomFragment"
+        android:label="MakeRoomFragment" />
 </navigation>
