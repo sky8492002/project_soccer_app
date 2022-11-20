@@ -7,7 +7,9 @@ import com.example.project_soccer_app.R
 import com.example.project_soccer_app.databinding.FragmentFormationBinding
 import com.example.project_soccer_app.viewModel.UserDataViewModel
 import com.example.project_soccer_app.viewModel.UserDataViewModellFactory
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

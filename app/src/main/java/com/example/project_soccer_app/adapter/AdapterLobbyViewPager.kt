@@ -4,7 +4,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.example.project_soccer_app.ui.RoomSearchFragment
+import com.example.project_soccer_app.ui.matchsearch.MatchSearchFragment
 
 class AdapterLobbyViewPager(fragmentManager: FragmentManager, lifecycle: Lifecycle) :
     FragmentStateAdapter(fragmentManager, lifecycle) {
@@ -14,10 +14,10 @@ class AdapterLobbyViewPager(fragmentManager: FragmentManager, lifecycle: Lifecyc
 
         override fun createFragment(position: Int): Fragment {
             when (position) {
-                0 -> return RoomSearchFragment()
-                1 -> return RoomSearchFragment()
-                2 -> return RoomSearchFragment()
+                0 -> return MatchSearchFragment()
+                1 -> return MatchSearchFragment()
+                2 -> return MatchSearchFragment()
             }
-            return RoomSearchFragment()
+            return MatchSearchFragment()
         }
     }
