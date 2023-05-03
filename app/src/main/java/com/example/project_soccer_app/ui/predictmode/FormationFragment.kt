@@ -1,4 +1,4 @@
-package com.example.project_soccer_app.ui
+package com.example.project_soccer_app.ui.predictmode
 
 import android.os.Bundle
 import android.view.LayoutInflater

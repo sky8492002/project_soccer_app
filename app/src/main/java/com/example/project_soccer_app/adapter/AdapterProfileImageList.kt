@@ -1,24 +1,13 @@
 package com.example.project_soccer_app.adapter
 
 import android.annotation.SuppressLint
-import android.app.ActionBar
 import android.content.Context
-import android.graphics.drawable.Drawable
-import android.media.Image
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelStoreOwner
 import androidx.recyclerview.widget.RecyclerView
 import com.example.project_soccer_app.R
 import com.example.project_soccer_app.databinding.ItemProfileImageBinding
 import com.example.project_soccer_app.data.model.ProfileImageData
-import com.example.project_soccer_app.viewModel.UserDataViewModel
-import com.example.project_soccer_app.viewModel.UserDataViewModellFactory
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 
 class AdapterProfileImageList(val context: Context, val list: List<ProfileImageData>): RecyclerView.Adapter<ProfileImageHolder>() {
     var items = list

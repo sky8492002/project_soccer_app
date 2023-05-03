@@ -14,7 +14,7 @@ class UserDataViewModel() : ViewModel() {
 
 }
 
-class UserDataViewModellFactory(): ViewModelProvider.Factory {
+class UserDataViewModelFactory(): ViewModelProvider.Factory {
 
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(UserDataViewModel::class.java)) {

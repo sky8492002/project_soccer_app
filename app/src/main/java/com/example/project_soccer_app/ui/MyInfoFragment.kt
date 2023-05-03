@@ -8,7 +8,6 @@ import android.os.Bundle
 import android.view.*
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -19,7 +18,7 @@ import com.example.project_soccer_app.databinding.FragmentMyinfoBinding
 import com.example.project_soccer_app.data.model.ProfileImageData
 import com.example.project_soccer_app.data.model.UserData
 import com.example.project_soccer_app.viewModel.UserDataViewModel
-import com.example.project_soccer_app.viewModel.UserDataViewModellFactory
+import com.example.project_soccer_app.viewModel.UserDataViewModelFactory
 import com.google.android.gms.tasks.Task
 import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.FirebaseFirestore
@@ -43,7 +42,7 @@ class MyInfoFragment: Fragment() {
         fragmentMyinfoBinding = FragmentMyinfoBinding.inflate(layoutInflater)
         dialogProfileImagePickBinding = DialogProfileImagePickBinding.inflate(layoutInflater)
         fireStore = FirebaseFirestore.getInstance()
-        userDataViewModel = ViewModelProvider(requireActivity(), UserDataViewModellFactory()).get(
+        userDataViewModel = ViewModelProvider(requireActivity(), UserDataViewModelFactory()).get(
             UserDataViewModel::class.java)
         // activity와 viewmodel 공유 (동일한 viewmodel 반환)
 

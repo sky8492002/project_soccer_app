@@ -3,86 +3,68 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
-    <LinearLayout
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:paddingHorizontal="10dp"
-        android:background="#7CCDF1"
+        android:padding="25dp"
+        android:background="@drawable/home_background"
         android:weightSum= "10">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_marginHorizontal="10dp"
-            android:layout_height="0dp"
-            android:layout_weight="1">
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_marginHorizontal="10dp"
-            android:layout_height="0dp"
-            android:layout_weight="1">
-
-            <TextView
-                android:id= "@+id/testTextView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text = "userID"
-                android:textColor="#000000"
-                />
-        </LinearLayout>
-
-        <LinearLayout
+        <TextView
+            android:id= "@+id/title_textView"
             android:layout_width="match_parent"
             android:layout_margin="10dp"
             android:layout_height="0dp"
-            android:layout_weight="2"
-            android:orientation="horizontal"
-            android:weightSum="2">
-            <Button
-                android:id= "@+id/minigame_button"
-                android:layout_width="0dp"
-                android:layout_margin="10dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text = "미니게임"
-                android:background="@drawable/round_background">
-            </Button>
+            android:text = "userID"
+            android:textColor="#000000"
+            app:layout_constraintVertical_weight="1"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/lobby_button"
+            />
 
-            <Button
-                android:id = "@+id/myInfo_button"
-                android:layout_width="0dp"
-                android:layout_margin="10dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text = "내 정보"
-                android:background="@drawable/round_background">
-            </Button>
-
-        </LinearLayout>
-
-        <LinearLayout
+        <Button
+            android:id= "@+id/lobby_button"
             android:layout_width="match_parent"
             android:layout_margin="10dp"
             android:layout_height="0dp"
-            android:layout_weight="2"
-            android:orientation="horizontal"
-            android:weightSum="2">
-            <Button
-                android:id= "@+id/lobby_button"
-                android:layout_width="0dp"
-                android:layout_margin="10dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text = "대기실"
-                android:background="@drawable/round_background">
-            </Button>
+            android:text = "경기 검색"
+            android:background="@drawable/round_background"
+            app:backgroundTint="@null"
+            app:layout_constraintVertical_weight="2"
+            app:layout_constraintTop_toBottomOf="@id/title_textView"
+            app:layout_constraintBottom_toTopOf="@id/predict_mode_button">
+        </Button>
 
-        </LinearLayout>
+        <com.google.android.material.button.MaterialButton
+            android:id= "@+id/predict_mode_button"
+            android:layout_width="match_parent"
+            android:layout_margin="10dp"
+            android:layout_height="0dp"
+            android:text = "예측 모드"
+            android:background="@drawable/round_background"
+            app:backgroundTint="@null"
+            app:icon="@drawable/player1"
+            app:iconSize="100dp"
+            app:iconGravity="start"
+            app:iconTintMode="multiply"
+            app:layout_constraintVertical_weight="2"
+            app:layout_constraintTop_toBottomOf="@id/lobby_button"
+            app:layout_constraintBottom_toTopOf="@id/grow_mode_button">
+        </com.google.android.material.button.MaterialButton>
 
+        <Button
+            android:id = "@+id/grow_mode_button"
+            android:layout_width="match_parent"
+            android:layout_margin="10dp"
+            android:layout_height="0dp"
+            android:text = "육성 모드"
+            android:background="@drawable/round_background"
+            app:backgroundTint="@null"
+            app:layout_constraintVertical_weight="2"
+            app:layout_constraintTop_toBottomOf="@id/predict_mode_button"
+            app:layout_constraintBottom_toBottomOf="parent">
+        </Button>
 
-
-
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

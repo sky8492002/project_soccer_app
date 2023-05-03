@@ -6,7 +6,7 @@ import androidx.paging.LoadType
 import androidx.paging.PagingState
 import androidx.paging.RemoteMediator
 import androidx.room.withTransaction
-import com.example.project_soccer_app.data.SoccerApiService
+import com.example.project_soccer_app.data.api.SoccerApiService
 import com.example.project_soccer_app.data.database.SoccerDatabase
 import com.example.project_soccer_app.data.database.match.LoadedMatchDateEntity
 import com.example.project_soccer_app.data.database.match.MatchEntity
@@ -21,7 +21,7 @@ class MatchRemoteMediator(
 ) : RemoteMediator<Int, MatchEntity>() {
 
     override suspend fun initialize(): InitializeAction {
-        return InitializeAction.SKIP_INITIAL_REFRESH
+        return InitializeAction.LAUNCH_INITIAL_REFRESH
     }
 
     override suspend fun load(

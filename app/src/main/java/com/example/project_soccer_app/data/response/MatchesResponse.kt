@@ -1,17 +1,17 @@
-package com.example.project_soccer_app.data
+package com.example.project_soccer_app.data.response
 
 data class MatchesResponse(
-    val leagues: List<LeagueResponse>
+    val leagues: List<LeagueSummaryResponse>
 )
 
-data class LeagueResponse(
+data class LeagueSummaryResponse(
     val id: Int,
     val primaryId: Int?,
     val name: String?,
-    val matches: List<MatchResponse>
+    val matches: List<MatchSummaryResponse>
 )
 
-data class MatchResponse(
+data class MatchSummaryResponse(
     val id: Int,
     val leagueId: Int?,
     val time: String?,

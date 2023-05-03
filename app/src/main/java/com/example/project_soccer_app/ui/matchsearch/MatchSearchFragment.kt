@@ -30,9 +30,9 @@ class MatchSearchFragment: Fragment() {
         fragmentMatchSearchBinding.matchSelectRecyclerView.adapter = matchAdapter
 
         val sampleDates = mutableListOf<String>()
-        sampleDates.add("20221120")
-        sampleDates.add("20221121")
-        sampleDates.add("20221122")
+        sampleDates.add("20221217")
+        sampleDates.add("20221218")
+        sampleDates.add("20221219")
 
         viewLifecycleOwner.lifecycleScope.launch(){
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED){

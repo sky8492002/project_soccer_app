@@ -7,7 +7,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.activity.result.contract.ActivityResultContract
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -16,7 +15,7 @@ import com.example.project_soccer_app.R
 import com.example.project_soccer_app.databinding.FragmentLoginBinding
 import com.example.project_soccer_app.data.model.UserData
 import com.example.project_soccer_app.viewModel.UserDataViewModel
-import com.example.project_soccer_app.viewModel.UserDataViewModellFactory
+import com.example.project_soccer_app.viewModel.UserDataViewModelFactory
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
@@ -152,7 +151,7 @@ class LoginFragment : Fragment() {
 
         var viewModel = ViewModelProvider(
             requireActivity(),
-            UserDataViewModellFactory()
+            UserDataViewModelFactory()
         ).get(UserDataViewModel::class.java)
         // activity와 viewmodel 공유 (동일한 viewmodel 반환)
 

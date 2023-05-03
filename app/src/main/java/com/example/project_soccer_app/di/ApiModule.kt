@@ -1,17 +1,17 @@
 package com.example.project_soccer_app.di
 
 import com.example.project_soccer_app.BuildConfig
-import com.example.project_soccer_app.data.SoccerApiService
+import com.example.project_soccer_app.data.api.SoccerApiService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
+import javax.inject.Named
 import javax.inject.Singleton
 
 @Module
@@ -21,14 +21,15 @@ class ApiModule {
     @Provides
     @Singleton
     fun provideSoccerApiService(
-        retrofit: Retrofit
+        @Named("Standard") retrofit: Retrofit
     ): SoccerApiService {
         return retrofit.create(SoccerApiService::class.java)
     }
 
     @Provides
     @Singleton
-    fun provideRetrofit(
+    @Named("Standard")
+    fun provideSoccerRetrofit(
         okHttpClient: OkHttpClient,
         gsonConverterFactory: GsonConverterFactory
     ): Retrofit {

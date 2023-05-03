@@ -1,7 +1,6 @@
 package com.example.project_soccer_app.di
 
-import com.example.project_soccer_app.data.SoccerApiService
-import com.example.project_soccer_app.data.database.SoccerDatabase
+import com.example.project_soccer_app.data.datasource.MatchDataSource
 import com.example.project_soccer_app.data.repository.MatchRepository
 import com.example.project_soccer_app.data.repository.MatchRepositoryImpl
 import dagger.Module
@@ -17,9 +16,8 @@ class RepositoryModule {
     @Provides
     @Singleton
     fun getMatchRepository(
-        db: SoccerDatabase,
-        api: SoccerApiService
+        matchDataSource: MatchDataSource
     ): MatchRepository {
-        return MatchRepositoryImpl(db, api)
+        return MatchRepositoryImpl(matchDataSource)
     }
 }
